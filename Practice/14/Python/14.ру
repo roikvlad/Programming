@@ -1,0 +1,18 @@
+n=int(input("Введите число="))
+b = 10**15
+x = 1
+i = 1
+
+if n >= 0 and n <= b :
+    if n == 0 :
+        print("Количество=", 0)
+    else:
+        while i < n:
+            x=x*2
+            i = i + 1
+            if x > n :
+                d = i
+                print("Количество=", d-1)
+                break
+else:
+	print("Ваше число не попадает в диапозон.")

@@ -1,0 +1,15 @@
+a=float(input("Введите a"))
+b=float(input("Введите b"))
+c=float(input("Введите c"))
+d=b*b-4*a*c
+if a == 0:
+    print ("x=", -c / b)
+else:
+    if d < 0:
+        print ("Уравнение не имеет решений")
+    else: 
+        if (d == 0):
+            print ("x=" , -b / (2 * a))
+        else:
+            print ( "x1=" , (-b + math.sqrt(d)) / (2 * a) ) 
+            print ( "x2=" , (-b - math.sqrt(d)) / (2 * a) )

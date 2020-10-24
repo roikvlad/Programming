@@ -1,0 +1,12 @@
+a=float(input("Введите a = "))
+c=input("Введите символ действия - ")
+b=float(input("Введите b = "))
+
+if c == '+':
+    print ("a+b=", a + b)
+elif c == "-":
+    print ("a-b=", a - b)   
+elif c == "*":
+    print ("a*b=", a * b)
+elif c == '/' :
+    print ("a/b=", a / b)

@@ -1,0 +1,14 @@
+n = int(input("Введите число для проверки\n"))
+b = 10**10;
+i = 2
+if n >= 2 and n <= b :
+    a = 0
+    for number in range(10) :
+        if n % i == 0 :
+            a = 1
+    if a and n!=2 and n!=3 and n!=5 and n!=7 :
+            print("Составное число")
+    else :
+            print("Простое число")
+else :
+    print("Число n не соответствует условию")

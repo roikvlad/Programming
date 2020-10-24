@@ -1,0 +1,23 @@
+import random
+c = 1 
+print("Угадай число от 0-100 у тебя 5 попыток.")
+
+while c > 0 :
+    y = random.randrange(0, 100)
+    for i in range(5):
+        n=int(input())
+        if n==y :
+            print("Поздравляю! Вы угадали")
+            break
+        elif n < y and i != 4 :
+            print("Загаданное число больше")
+        elif n > y and i != 4 :
+            print("Загаданное число меньше")
+        elif i == 4:
+            print("Вы проиграли. Было загадано: ", y, "")
+
+    b=int(input("Хотите начать сначала?(1 - ДА )\n"))
+    if b == 1 :
+            print("Угадай число от 0-100 у тебя 5 попыток.")
+    if b != 1 :
+            break
