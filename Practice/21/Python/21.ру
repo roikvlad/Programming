@@ -1,0 +1,17 @@
+def bmi(weight: float, height: float) -> float:
+    bmi=(weight / (height*height))
+    return bmi
+def print_bmi(bmi: float) -> float:
+    i=k
+    if (i < 18.5):
+        print("Underweight")
+    elif ( 18.5 <= i and i < 25.0 ):
+        print("Normal")
+    elif (25.0 <= i and i < 30.0):
+        print("Overweight")
+    elif (30.0 <= i):
+        print("Obesity")
+weight, z=map(float,input("Введите вес в килограммах и рост в сантиметрах= ").split(' '))
+height = z/100
+k=bmi(weight, height)
+print_bmi(bmi)
