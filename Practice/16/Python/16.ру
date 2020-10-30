@@ -1,0 +1,21 @@
+n=int(input("Введите число проверяемых значений = "))
+i = 1
+
+while i <= n :
+    arr = input("Введите проверяемое значение = ")
+    i += 1
+    if (arr[0] == 'a'):
+        if (arr[4] == '5'):
+            if (arr[5] == '5'):
+                if (arr[6] == '6'):
+                    if (arr[7] == '6'):
+                        if (arr[8] == '1'):
+                            print(a)
+                        else: 
+                            print(-1)
+                    else: 
+                        print(-1)
+                else: 
+                    print(-1)
+            else: 
+                print(-1)
