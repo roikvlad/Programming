@@ -4,6 +4,6 @@
 
 int sochetanie(int n, int k)
 {
-	return( factorial(n) ) / ( ( factorial(k) ) * ( factorial(10 - k) ) );
+	return( factorial(n) ) / ( ( factorial(k) ) * ( factorial(10 - k) ) ) ;
 }
 #endif
