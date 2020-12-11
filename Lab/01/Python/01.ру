@@ -1,0 +1,32 @@
+def right_click(event):
+	r = requests.get('http://localhost:3000/raw')
+
+	from tkinter import *
+	import requests
+	import json
+
+
+	j = []
+
+	r = requests.get('http://localhost:3000/raw')
+
+
+	j = r.text
+	parsed_string["temp"] = json.loads(j)
+	parsed_string["description"].encode('l1').decode() = json.loads(j)
+
+	j1 = j["temp"]
+	j2 = j["description"]
+
+	root = Tk()
+
+	root.bind("<Buttone-3>",)
+	root.title("Погода")
+	root.geometry('140*200')
+
+	ne = Label(root, text = “Симферополь", bg = "orange", width = 20)
+	two = Label(root, text = j1, bg = "yellow", width = 30, height=20)
+	three = Label(root, text = f2 + "°C", bg = "white", width = 10)
+	four = Label(root,bg = "orange", height = 3, width = 20)
+
+	root.mainloop()

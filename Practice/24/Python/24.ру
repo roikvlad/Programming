@@ -1,0 +1,32 @@
+import json
+
+j1 = []
+j2 = []
+with open('in.json','r', encoding="utf-8") as read_file:
+    data = json.load(read_file)
+j3 = []
+b = 0
+task_completed = 0
+
+i = 0
+for k in data:
+    task_completed = 0
+    b = k["userId"];
+    for k2 in data:
+        if k["userId"] == k2["userId"] and k["id"] != -1:
+            if bool(k2["completed"]) == True:
+                task_completed += 1
+
+if k["id"] != k2["id"]:
+    k2["id"] = -1
+
+t = {"task_completed":task_completed,"userId":k["userId"]}
+j3.append(t)
+i +=1
+
+for n in j3:
+    if n["task_completed"] != 0:
+        j2.append(n)
+
+with open("out.json", "w") as write_file:
+    json.dump(j2, write_file, indent=2)
