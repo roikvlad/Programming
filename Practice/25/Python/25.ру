@@ -1,0 +1,67 @@
+import math
+import random
+
+arr = []
+n = int(input())
+d = abs(n)
+
+if float(d**0.5) - int(d**0.5) == 0 and n <= 100 and n >= 4: 
+	arr = list(input().split()) 
+	m = []
+	l = int(n**0.5)
+	
+	for i in range(l):
+		m.append(arr[i*l:i*l+l])
+
+	a0 = arr[0]
+	a1 = arr[1]
+	a2 = arr[2]
+
+	def BozoSort(mylist,b=None,c= None, asc = True):
+		last_arr = []
+		
+		if b != None and c != None:
+			last_arr.append(mylist)
+			last_arr.append(b)
+			last_arr.append(c)
+		elif type(mylist[0]) == list:
+			for row in mylist:
+				for min in row:
+					last_arr.append(min)
+		else:
+			last_arr = mylist[:]
+			
+		forward = True
+
+		while forward:
+			forward = False
+			r1 = random.randrange(0,len(last_arr))
+			r2 = random.randrange(0,len(last_arr)) 
+			temp = last_arr[r1]
+			last_arr[r1] = last_arr[r2]
+			last_arr[r2] = temp
+			k = 1
+			while k < len(last_arr):
+				if asc == True:
+					if int(last_arr[k-1]) > int(last_arr[k]):
+						forward = True
+				else:
+					if int(last_arr[k-1]) < int(last_arr[k]):
+						forward = True
+				k +=1
+		return last_arr
+	def printelems(lastlist):
+		for x in lastlist:
+			print(x,end = " ")
+
+		print()
+	printelems(BozoSort(arr,asc = True))
+	printelems(BozoSort(arr,asc = False))
+	printelems(BozoSort(m,asc = True))
+	printelems(BozoSort(m,asc = False))
+	printelems(BozoSort(a0,a1,a2,asc = True))
+	printelems(BozoSort(a0,a1,a2,asc = False))
+
+else:
+	print("Ваше n не подходит по условию")
+
