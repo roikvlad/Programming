@@ -172,42 +172,53 @@ int main() {
 <p align="center">4</p>
 <hr>
 
-Часть кода на Python:
+Код на Python:
 
 ```
 
-def right_click(event):
-r = requests.get('http://localhost:3000/raw')
-
 from tkinter import *
-import requests
 import json
+import requests
 
+def reload_data(event=None):
+	try:
+		response = requests.get('http://localhost:3000/raw').content.decode("utf8")
+		forecast_j = json.loads(response)
 
-j = []
-
-r = requests.get('http://localhost:3000/raw')
-
-
-j = r.text
-parsed_string["temp"] = json.loads(j)
-parsed_string["description"].encode('l1').decode() = json.loads(j)
-
-j1 = j["temp"]
-j2 = j["description"]
+		desc.config(text=str(forecast_j["description"]))
+		temp.config(text=str(int(forecast_j["temp"])) + "°C")
+	except requests.exceptions.ConnectionError:
+		pass
 
 root = Tk()
-
-root.bind("<Buttone-3>",)
 root.title("Погода")
-root.geometry('140*200')
+root.bind("<Button-1>", reload_data)
+root.geometry('250x200')
 
-one = Label(root, text = “Симферополь", bg = "orange", width = 20)
-two = Label(root, text = j1, bg = "yellow", width = 30, height=20)
-three = Label(root, text = f2 + "°C", bg = "white", width = 10)
-four = Label(root,bg = "orange", height = 3, width = 20)
+yellow = "#ffb84d"
+white = "#ffffff"
+w = 100        
+h = 30
 
+top_frame =    Frame(root, bg=yellow, width=w, height=h)
+middle_frame = Frame(root, bg=white,  width=w, height=h*3)
+bottom_frame = Frame(root, bg=yellow, width=w, height=h)
+
+top_frame.pack(side=TOP, fill=X)
+middle_frame.pack(expand=True, fill=BOTH)
+bottom_frame.pack(side=BOTTOM, fill=X)
+
+city = Label(top_frame, font=("Times New Roman", 12), text="Симферополь", bg=yellow)
+desc = Label(top_frame, font=("Times New Roman", 12), bg=yellow)
+temp = Label(middle_frame, font=("Times New Roman", 48), bg=white)
+
+city.pack(pady=0)
+desc.pack(pady=0)
+temp.pack(expand=True)
+
+reload_data()
 root.mainloop()
+
 
 ```
 
