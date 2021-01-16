@@ -35,8 +35,8 @@
 Для получения API Key я зарегистрировался на сайте http://openweathermap.org/. После регистрации в разделе API Keys создал новый Key с названием «API key»(рис.1).
 	API key: **601ce3f27452b85666c9cf828acab787**
 
-![](https://cdn1.savepice.ru/uploads/2020/11/20/95ba3648b0a85ed599ea514b69e08db8-full.jpg)
-<p align=center>Рисунок 1. Созданный key «API key». 
+![](C:\Users\USER\Desktop\Programming\Lab\01\картинки\ключ.jpg)
+Рисунок 1. Созданный key «API key». 
 
 Далее мы будем использовать его для решения поставленных задач.
 Я составил запрос на получение прогноза погоды для города  Симферополя с почасовым интервалом, в градусах Цельсия, на русском языке.
@@ -47,14 +47,15 @@
 <hr>
 Данный запрос позволит мне использовать данные погоды, которые в формате json были предоставлены мне в ответ на запрос погоды(рис.2).
 
-![](https://cdn1.savepice.ru/uploads/2020/11/20/79b7485182015e248cde31489634eecc-full.jpg)
-<p align=center>Рисунок 2. Ответ на запрос погоды.
+![](C:\Users\USER\Desktop\Programming\Lab\01\картинки\погода.jpg)
+Рисунок 2. Ответ на запрос погоды.
+
 Также, для дальнейшей работы, мне понадобилось время местности, для которой  брались данные о погоде. Я сформировал запрос на время, который предоставляет время необходимой местности в формате json.
 
 Запрос на время: http://worldtimeapi.org/api/timezone/Europe/Simferopol
 
-![](https://cdn1.savepice.ru/uploads/2020/11/20/f06e133df25e66ba0a2361dad6019555-full.jpg)
-<p align=center>Рисунок 3. Ответ на запрос время.
+![](C:\Users\USER\Desktop\Programming\Lab\01\картинки\время.jpg)
+Рисунок 3. Ответ на запрос время.
 
 Я создал серверное приложение, которое создаёт сервер. Когда пользователь вводит http://localhost:3000/ , тогда он должен получить краткий прогноз погоды в виде виджета,  если же пользователь вводит http://localhost:3000/raw , ему выводиться json файл, который нужен будет для работы клиентского приложения Python.
 Для этого нужно загрузить в папку с главным .срр файлом два файла для работы серверного приложения: json.h и httplib.h. Данные файлы я заранее скачал из репозитория https://github.com/yhirose/cpp-httplib . 
@@ -63,7 +64,7 @@
 <hr>
 Код С++:
 
-```
+```C++
 #include <iostream>
 #include <cpp_httplib/httplib.h>
 #include <string>
@@ -271,12 +272,12 @@ int main()
 ```
 <p align="center">3</p>
 <hr>
-![](https://cdn1.savepice.ru/uploads/2020/11/20/486373b77e16dbbed256594a72c110b1-full.jpg)
-<p align=center>Рисунок 4. Результат при вводе http://localhost:3000/.
+![](C:\Users\USER\Desktop\Programming\Lab\01\картинки\виджет.jpg)
+Рисунок 4. Результат при вводе http://localhost:3000/.
 
 А вот и результат при вводе http://localhost:3000/raw:
 
-![](https://cdn1.savepice.ru/uploads/2020/11/20/e97ceb3e0d419281e76afe8d3945f61d-full.jpg)
+![](C:\Users\USER\Desktop\Programming\Lab\01\картинки\Приложение.png)
 Рисунок 5. Результат при вводе http://localhost:3000/raw.
 
 Следующим шагом стало создание клиентского приложения, которое принимает значение файла формата json, который находится на http://localhost:3000/raw, и на основе этих данных создаёт виджет(рис.6).
@@ -286,8 +287,7 @@ int main()
 
 Код на Python:
 
-```
-
+```Python
 from tkinter import *
 import json
 import requests
@@ -330,17 +330,15 @@ temp.pack(expand=True)
 
 reload_data()
 root.mainloop()
-
-
 ```
 
-![1](https://cdn1.savepice.ru/uploads/2020/11/20/5c2123f7235c2e3e7447e2ef27d009ba-full.png)
-<p align=center>Рисунок 6. Вид эскиза виджета на Python.
+![](C:\Users\USER\Desktop\Programming\Lab\01\картинки\Приложение.png)
+Рисунок 6. Вид эскиза виджета на Python.
 
 Для защиты работы я скачал программу ngrok с сайта https://ngrok.com/ .  Данная программа позволило создать туннель к localhost. Открыв программу, мне осталось лишь ввести ngrok.exe http 3000. Мой сервер будет доступен из интернета(Рис.7).
 
-![](https://cdn1.savepice.ru/uploads/2020/11/20/bdc9a9067d2c400b35d04a4bb6d14a73-full.jpg)
-<p align=center>Рисунок 7. Созданный туннель.
+![](C:\Users\USER\Desktop\Programming\Lab\01\картинки\ngrok.jpg)
+Рисунок 7. Созданный туннель.
 
 
 Если прописать в браузере http://127.0.0.1:4040  можно увидеть статистику по запросам, проходящим через туннель.
