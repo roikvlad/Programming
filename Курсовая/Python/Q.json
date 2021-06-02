@@ -1,0 +1,46 @@
+  [[{
+     "namea":"Как называется ближайшая к Солнцу планета?",
+     "color":"orange",
+      "status": "0"
+     
+    },{
+      "namea":"Венера",
+      "color":"red",
+      "status": "0"
+    },{
+      "namea":"Марс",
+      "color":"deeppink",
+      "status": "0"
+    },{
+      "namea":"Меркурий",
+      "color":"tomato",
+      "status": "1"
+    },{
+      "namea":"Земля",
+      "color":"cyan",
+      "status": "0"
+    }],[{
+     "namea":"Какая страна первой запустила спутник?",
+     "color":"orange",
+      "status": "0"
+     
+    },{
+      "namea":"Китай",
+      "color":"red",
+      "status": "0"
+    },{
+      "namea":"США",
+      "color":"deeppink",
+      "status": "0"
+    },{
+      "namea":"СССР",
+      "color":"tomato",
+      "status": "1"
+    },{
+      "namea":"Украина",
+      "color":"cyan",
+      "status": "0"
+    }]
+    
+    
+    ]
